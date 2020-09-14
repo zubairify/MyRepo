@@ -24,4 +24,9 @@ public class TestArithmetic {
 	public void testSumAgain() {
 		assertEquals(9, arth.sum(4, 5));
 	}
+	
+	@Test
+	public void testMax() {
+		assertEquals(5, arth.max(3, 5));
+	}
 }
