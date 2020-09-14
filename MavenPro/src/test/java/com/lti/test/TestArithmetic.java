@@ -32,6 +32,6 @@ public class TestArithmetic {
 	
 	@Test
 	public void testMin() {
-		assertEquals(3, arth.max(3, 5));
+		assertEquals(3, arth.min(3, 5));
 	}
 }
