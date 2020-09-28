@@ -1,0 +1,19 @@
+<form (ngSubmit)='loggedIn()'>
+    <table class="table-border">
+        <tr><th colspan="2">Login Screen</th></tr>
+        <tr><td>Username</td>
+            <td><input name="username" [(ngModel)]=login.username></td>
+        </tr>
+        <tr><td>Password</td>
+            <td><input type="password" name="password" [(ngModel)]=login.password></td>
+        </tr>
+        <tr><td>Role</td>
+            <td><select name="role" [(ngModel)]=login.role>
+                <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+            </select></td>
+        </tr>
+        <tr><th><button type="submit">Login</button></th>
+            <th><button type="reset">Logout</button></th>
+        </tr>
+    </table>
+  </form>

@@ -1,0 +1,22 @@
+<form (ngSubmit)="updateEmp()" #editForm="ngForm">
+    <div class="form-group">
+        <label for="id">Employee ID</label>
+        <input class="form-control" name="id" [(ngModel)]=emp.empid
+            required pattern="[0-9]{3,}" placeholder="ID" #id='ngModel'>
+        <span *ngIf="id.touched && id.invalid" class="alert-danger">
+            Employee ID is invalid!
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="name">Employee Name</label>
+        <input class="form-control" name="name" [(ngModel)]=emp.ename
+            required pattern="[A-Z][a-z]{3,}" placeholder="Name">
+    </div>
+    <div class="form-group">
+        <label for="salary">Employee Salary</label>
+        <input class="form-control" name="salary" [(ngModel)]=emp.salary
+            required pattern="[0-9]{3,}" placeholder="Salary">
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!editForm.valid">
+        Update Employee</button>
+</form>

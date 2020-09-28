@@ -1,0 +1,20 @@
+<form class="form-inline" (ngSubmit)="searchEmp()">
+    <label for="id">Employee ID</label> &nbsp; &nbsp;
+    <input class="form-control" name="id" [(ngModel)]=id
+        placeholder="Eg:101" required pattern="[0-9]{3,}"> &nbsp; &nbsp;
+    <button type="submit" class="btn btn-success">Search</button>
+</form>
+<br>
+<table style="width:400px;" class="table table-bordered table-striped">
+    <tbody>
+        <tr><td style="width:200px;">Employee ID</td>
+            <td>{{ emp.empid }}</td>
+        </tr>
+        <tr><td>Employee Name</td>
+            <td>{{ emp.ename }}</td>
+        </tr>
+        <tr><td>Employee Salary</td>
+            <td>{{ emp.salary | currency }}</td>
+        </tr>
+    </tbody>
+</table>

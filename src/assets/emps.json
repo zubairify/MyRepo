@@ -1,0 +1,12 @@
+[
+    {
+        "empid": 101,
+        "ename": "Polo",
+        "salary": 5000
+    },
+    {
+        "empid": 102,
+        "ename": "Lili",
+        "salary": 7000
+    }
+]

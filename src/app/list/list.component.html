@@ -1,0 +1,22 @@
+<table style="width:700px;" class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th style="width:125px;" (click)="sortById()">Employee ID</th>
+            <th>Employee Name</th>
+            <th style="width:160px;">Employee Salary</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of list">
+            <td>{{ emp.empid }}</td>
+            <td>{{ emp.ename }}</td>
+            <td>{{ emp.salary | currency }}</td>
+            <td>
+                <button class="btn btn-info" (click)="editEmp(emp.empid)">Edit</button>
+                &nbsp;&nbsp;
+                <button class="btn btn-warning" (click)="deleteEmp(emp.empid)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
