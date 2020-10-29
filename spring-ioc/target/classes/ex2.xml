@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- By default Spring instantiation style is singleton i.e. create object for the first time and return same object ref -->
+	<!-- Prototype scope tells spring to create new object per request -->
+	<!-- Factory-method tells spring to use our method to create object -->
+	<bean id="s" class="com.cg.ex2.Stock" scope="prototype" factory-method="get" />
+	
+</beans>

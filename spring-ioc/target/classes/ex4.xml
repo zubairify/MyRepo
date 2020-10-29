@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="sms" class="com.cg.ex4.TextMessage" />
+	
+	<bean id="email" class="com.cg.ex4.EmailMessage" />
+	
+	<bean id="wap" class="com.cg.ex4.WhatsappMessage" lazy-init="true" />
+	
+	<bean id="mp" class="com.cg.ex4.MessageProcessor" />
+	
+</beans>

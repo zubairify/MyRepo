@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Treating Java's String class as a bean -->
+	<bean id="str" class="java.lang.String">
+		<constructor-arg value="Hello String" />
+	</bean>
+	
+	<!-- Injecting reference of a bean to another bean -->
+	<!-- <bean id="hola" class="com.cg.ex1.HelloWorld"> -->
+		<!-- Constrcutor injection -->
+	<!-- <constructor-arg ref="str" />
+	</bean> -->
+	
+	<bean id="hola" class="com.cg.ex1.HelloWorld">
+		<!-- Setter injection -->
+		<property name="greeting" ref="str" />
+	</bean>
+	
+	<!-- Setter value injection -->
+	<!-- <bean id="hola" class="com.cg.ex1.HelloWorld">
+		<property name="greeting" value="Hello Spring" />
+	</bean> -->
+	
+	<!-- Constructor value injection -->
+	<!-- <bean id="hola" class="com.cg.ex1.HelloWorld">
+		<constructor-arg value="Hello Spring" />
+	</bean> -->
+	
+</beans>
