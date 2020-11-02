@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.entity.Hero;
+import com.cg.exception.HeroNotFoundException;
 import com.cg.service.IHeroService;
 
 @RestController
@@ -21,14 +22,14 @@ public class HeroRestController {
 	
 	// URL: http://localhost:8880/add
 	@PostMapping(value = "/add", consumes = "application/json")
-	public String addHero(@RequestBody Hero hero) {
+	public String addHero(@RequestBody Hero hero){
 		service.add(hero);
 		return "Hero added to clan";
 	}
 	
 	// URL: http://localhost:8880/get?id=123
 	@GetMapping(value = "/get", produces = "application/json")
-	public Hero getHero(@RequestParam("id") int id) {
+	public Hero getHero(@RequestParam("id") int id) throws HeroNotFoundException {
 		return service.get(id);
 	}
 	

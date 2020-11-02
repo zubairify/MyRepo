@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cg.entity.Hero;
+import com.cg.exception.HeroNotFoundException;
 import com.cg.repository.IHeroRepository;
 
 @Service
@@ -20,8 +21,9 @@ public class HeroService implements IHeroService {
 	}
 
 	@Override
-	public Hero get(int id) {
-		return repo.findById(id).get();
+	public Hero get(int id) throws HeroNotFoundException {
+		Hero hero = repo.findById(id).orElseThrow(HeroNotFoundException::new);
+		return hero;
 	}
 
 	@Override
