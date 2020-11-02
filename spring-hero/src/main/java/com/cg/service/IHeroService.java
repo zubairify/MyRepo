@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.cg.entity.Hero;
 import com.cg.exception.HeroNotFoundException;
+import com.cg.exception.UniverseNotFoundException;
 
 public interface IHeroService {
 	
@@ -13,5 +14,5 @@ public interface IHeroService {
 	
 	List<Hero> list();
 	
-	List<Hero> heroesByUniverse(String universe);
+	List<Hero> heroesByUniverse(String universe) throws UniverseNotFoundException;
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.entity.Hero;
 import com.cg.exception.HeroNotFoundException;
+import com.cg.exception.UniverseNotFoundException;
 import com.cg.service.IHeroService;
 
 @RestController
@@ -41,7 +42,7 @@ public class HeroRestController {
 	
 	// URL: http://localhost:8880/universe/marvel
 	@GetMapping(value = "/universe/{univ}", produces = "application/json")
-	public List<Hero> byUniverse(@PathVariable("univ") String universe) {
+	public List<Hero> byUniverse(@PathVariable("univ") String universe) throws UniverseNotFoundException {
 		return service.heroesByUniverse(universe);
 	}
 }
