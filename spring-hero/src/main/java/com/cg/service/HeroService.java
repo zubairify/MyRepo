@@ -9,6 +9,7 @@ import com.cg.entity.Hero;
 import com.cg.exception.HeroNotFoundException;
 import com.cg.exception.UniverseNotFoundException;
 import com.cg.repository.IHeroRepository;
+import com.cg.repository.IUniverseRepository;
 
 @Service
 public class HeroService implements IHeroService {
@@ -16,8 +17,13 @@ public class HeroService implements IHeroService {
 	@Autowired
 	private IHeroRepository repo;
 
+	@Autowired
+	private IUniverseRepository urepo;
+	
 	@Override
 	public void add(Hero hero) {
+		if(hero.getUid() != 0)
+			hero.setUniverse(urepo.findById(hero.getUid()).get());
 		repo.save(hero);
 	}
 

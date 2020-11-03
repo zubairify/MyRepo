@@ -4,7 +4,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "heroes")
@@ -19,11 +24,16 @@ public class Hero {
 	@Column(length = 20)
 	private String power;
 	
-	@Column(length = 10)
-	private String universe;
-	
 	@Column(length = 20)
 	private String strength;
+	
+	@Transient
+	private int uid;
+	
+	@ManyToOne
+	@JoinColumn(name = "uid")
+	@JsonIgnore
+	private Universe universe;
 
 	public int getId() {
 		return id;
@@ -46,10 +56,17 @@ public class Hero {
 		this.power = power;
 	}
 
-	public String getUniverse() {
+	public int getUid() {
+		return uid;
+	}
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+	
+	public Universe getUniverse() {
 		return universe;
 	}
-	public void setUniverse(String universe) {
+	public void setUniverse(Universe universe) {
 		this.universe = universe;
 	}
 
