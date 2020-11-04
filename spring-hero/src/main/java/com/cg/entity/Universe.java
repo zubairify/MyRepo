@@ -24,6 +24,19 @@ public class Universe {
 	@OneToMany(mappedBy = "universe", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Hero> heroes = new ArrayList<Hero>();
 
+	public Universe() {
+	}
+	
+	@Override
+	public String toString() {
+		return "{\"uid\":" + uid + ",\"uname\":\"" + uname + "\"}";
+	}
+
+	public Universe(int uid, String uname) {
+		this.uid = uid;
+		this.uname = uname;
+	}
+
 	public int getUid() {
 		return uid;
 	}

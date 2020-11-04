@@ -5,7 +5,7 @@ import com.cg.exception.UniverseNotFoundException;
 
 public interface IUniverseService {
 
-	void add(Universe universe);
+	Universe add(Universe universe);
 	
 	Universe get(int uid) throws UniverseNotFoundException;
 

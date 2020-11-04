@@ -19,9 +19,10 @@ public class UniverseRestController {
 	private IUniverseService service;
 	
 	@PostMapping(value = "/addu", consumes = "application/json")
-	public String addUniverse(@RequestBody Universe universe) {
+	public Universe addUniverse(@RequestBody Universe universe) {
 		service.add(universe);
-		return "Universe added successfully";
+//		return "Universe added successfully";
+		return universe;
 	}
 	
 	@GetMapping(value = "/getu", produces = "application/json")

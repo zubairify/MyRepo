@@ -14,8 +14,9 @@ public class UniverseService implements IUniverseService {
 	private IUniverseRepository repo;
 	
 	@Override
-	public void add(Universe universe) {
+	public Universe add(Universe universe) {
 		repo.save(universe);
+		return universe;
 	}
 
 	@Override

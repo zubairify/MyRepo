@@ -35,6 +35,17 @@ public class Hero {
 	@JsonIgnore
 	private Universe universe;
 
+	public Hero() {
+	}
+	
+	public Hero(int id, String name, String power, String strength, Universe universe) {
+		this.id = id;
+		this.name = name;
+		this.power = power;
+		this.strength = strength;
+		this.universe = universe;
+	}
+
 	public int getId() {
 		return id;
 	}
